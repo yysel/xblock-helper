@@ -12,7 +12,10 @@
     "autoload": {
         "psr-4": {
             "XBlock\\Helper\\":"src/"
-        }
+        },
+        "files": [
+            "src/function.php"
+        ]
     },
     "require": {
         "php": "^7.2",
