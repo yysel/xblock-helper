@@ -467,10 +467,10 @@ function read_dir($path, $type = 'dir')
         if ($file == '.' || $file == '..') continue;
         $new_dir_name = $path . '/' . $file;
         $key = is_dir($new_dir_name) ? $file : pathinfo($file)['filename'];
-        if ($type == 'dir' && is_dir($new_dir_name)) {
-            $file_list[$key] = $new_dir_name;
-        } elseif ($type == 'file' && is_file($new_dir_name)) {
-            $file_list[$key] = $new_dir_name;
+        if ($type == 'dir' ) {
+            if(is_dir($new_dir_name)) $file_list[$key] = $new_dir_name;
+        } elseif ($type == 'file' ) {
+            if(is_file($new_dir_name)) $file_list[$key] = $new_dir_name;
         } else   $file_list[$key] = $new_dir_name;
     }
     return $file_list;
