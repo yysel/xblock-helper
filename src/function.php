@@ -465,12 +465,12 @@ function read_dir($path, $type = 'dir')
     $file_name = opendir($path);
     while ($file = readdir($file_name)) {
         if ($file == '.' || $file == '..') continue;
-        $new_dir_name = $path . '/' . $file;
+        $new_dir_name = rtrim($path, '/') . '/' . $file;
         $key = is_dir($new_dir_name) ? $file : pathinfo($file)['filename'];
-        if ($type == 'dir' ) {
-            if(is_dir($new_dir_name)) $file_list[$key] = $new_dir_name;
-        } elseif ($type == 'file' ) {
-            if(is_file($new_dir_name)) $file_list[$key] = $new_dir_name;
+        if ($type == 'dir') {
+            if (is_dir($new_dir_name)) $file_list[$key] = $new_dir_name;
+        } elseif ($type == 'file') {
+            if (is_file($new_dir_name)) $file_list[$key] = $new_dir_name;
         } else   $file_list[$key] = $new_dir_name;
     }
     return $file_list;
