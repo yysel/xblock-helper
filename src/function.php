@@ -40,7 +40,7 @@ function ResponseCode($key, $message = null, $data, $type)
 {
     if (!$message) $message = $key ? '操作成功！' : '操作失败！';
     $code = compact('data', 'message', 'type');
-    return $key ? (new \XBlock\Helper\SuccessCode($code))->code('0000') : (new \XBlock\Helper\ErrorCode($code))->code('1000');
+    return $key ? (new \XBlock\Helper\Response\SuccessCode($code))->code('0000') : (new \XBlock\Helper\Response\ErrorCode($code))->code('1000');
 }
 
 
