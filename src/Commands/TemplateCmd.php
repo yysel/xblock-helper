@@ -9,6 +9,7 @@
 namespace XBlock\Helper\Commands;
 
 use Illuminate\Console\Command;
+use XBlock\Helper\FileService\FileFactory;
 use XBlock\Helper\Tool;
 use XBlock\Kernel\Services\BlockService;
 
