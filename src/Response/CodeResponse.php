@@ -1,6 +1,6 @@
 <?php
 
-namespace XBlock\Helper;
+namespace XBlock\Helper\Response;
 
 class CodeResponse
 {

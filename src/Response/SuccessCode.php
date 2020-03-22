@@ -1,8 +1,8 @@
 <?php
 
-namespace XBlock\Helper;
+namespace XBlock\Helper\Response;
 
-class ErrorCode extends CodeResponse
+class SuccessCode extends CodeResponse
 {
     public $success;
 
@@ -10,6 +10,6 @@ class ErrorCode extends CodeResponse
     {
         parent::__construct($data);
 
-        $this->success = false;
+        $this->success = true;
     }
 }
