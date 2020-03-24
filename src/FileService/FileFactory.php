@@ -63,14 +63,6 @@ class FileFactory
         return $app_dir = $this->core_path . '/' . $this->app_name;
     }
 
-    public function makeBlocksDir()
-    {
-        $app_dir = $this->getAppDirPath();
-
-        return $this->makeDirIfNotExist($app_dir . '/Blocks', 0777);
-    }
-
-
     public function makeBlockConfig($name, $path, $namespace)
     {
         try {
@@ -86,7 +78,7 @@ class FileFactory
 
     public function checkDir($dir)
     {
-        is_dir($dir) || $this->makeBlocksDir();
+        is_dir($dir) || $this->makeDirIfNotExist($dir, 0777);
         return $this;
     }
 
