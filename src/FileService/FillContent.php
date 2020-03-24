@@ -30,7 +30,7 @@ class {name} extends ModelBlock
     public function header()
     {
         return [
-            Field::uuid(),
+            Field::key(),
         ];
     }
     
