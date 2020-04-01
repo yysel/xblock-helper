@@ -12,10 +12,10 @@ class  FillContent
 
 namespace {namespace};
 
-use XBlock\Kernel\Blocks\ModelBlock;
-use XBlock\Kernel\Elements\Field;
-use XBlock\Kernel\Elements\Button;
+use XBlock\Kernel\Elements\ActionCreator;
 use XBlock\Kernel\Elements\Component;
+use XBlock\Kernel\Elements\FieldCreator;
+use XBlock\Kernel\Blocks\ModelBlock;
 
 class {name} extends ModelBlock
 {
@@ -27,20 +27,16 @@ class {name} extends ModelBlock
         return Component::table()->border();
     }
     
-    public function header()
+    public function fields(FieldCreator \$creator)
     {
-        return [
-            Field::key(),
-        ];
+        \$creator->key();
     }
     
-    public function button()
+    public function actions(ActionCreator \$creator)
     {
-        return [
-            Button::add(),
-            Button::edit(),
-            Button::delete(),
-        ];
+        \$creator->add();
+        \$creator->edit();
+        \$creator->delete();
     }
 }
 
