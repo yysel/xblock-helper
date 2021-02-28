@@ -48,11 +48,14 @@ function ResponseCode($key, $message = null, $data, $type)
  * @param mixed ...$param
  * @return \Illuminate\Http\Request
  */
-function request(...$param)
-{
-    if ($param) return app('request')->input(...$param);
-    return app('request');
+if (!function_exists('request')) {
+    function request(...$param)
+    {
+        if ($param) return app('request')->input(...$param);
+        return app('request');
+    }
 }
+
 
 function parameter($key = null, $default = '')
 {
@@ -87,7 +90,7 @@ function relation_uuid($default = '')
 }
 
 
-function create_dict(Array $data)
+function create_dict(array $data)
 {
     $dict = [];
     foreach ($data as $value => $text) {
